@@ -25,8 +25,8 @@ THE SOFTWARE.
 import fs from 'fs';
 import { Peripheral } from 'raspi-peripheral';
 
-export var OFF = 0;
-export var ON = 1;
+export const OFF = 0;
+export const ON = 1;
 
 export class LED extends Peripheral {
 
@@ -36,7 +36,7 @@ export class LED extends Peripheral {
   }
 
   read() {
-    return parseInt(fs.readFileSync('/sys/class/leds/led0/brightness').toString()) ? ON : OFF;
+    return parseInt(fs.readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
   }
 
   write(value) {

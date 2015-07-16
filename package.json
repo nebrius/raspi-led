@@ -1,10 +1,10 @@
 {
   "name": "raspi-led",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides access to status LED on the Raspberry Pi as part of the Raspi.js library suite",
   "main": "lib/index.js",
   "dependencies": {
-    "raspi-peripheral": "1.2.0"
+    "raspi-peripheral": "1.2.1"
   },
   "devDependencies": {
     "del": "^1.1.1",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bryan-m-hughes/raspi-led.git"
+    "url": "https://github.com/nebrius/raspi-led.git"
   },
   "keywords": [
     "nodebots",
@@ -27,7 +27,7 @@
   "author": "Bryan Hughes <bryan@theoreticalideations.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bryan-m-hughes/raspi-led/issues"
+    "url": "https://github.com/nebrius/raspi-led/issues"
   },
-  "homepage": "https://github.com/bryan-m-hughes/raspi-led"
+  "homepage": "https://github.com/nebrius/raspi-led"
 }
