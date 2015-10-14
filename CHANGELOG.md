@@ -1,3 +1,7 @@
+## 1.1.1 (2015-10-13)
+
+- Fixed a bug with raspi-peripheral throwing an exception
+
 ## 1.1.0 (2015-10-12)
 
 - Dependency updates to fix bug with invalid pin aliases

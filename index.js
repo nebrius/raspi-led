@@ -31,7 +31,7 @@ export const ON = 1;
 export class LED extends Peripheral {
 
   constructor() {
-    super();
+    super([]);
     fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
   }
 
