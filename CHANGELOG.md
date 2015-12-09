@@ -1,3 +1,7 @@
+## 1.2.0 (2015-12-8)
+
+- Updated dependencies to add Raspberry Pi Zero support
+
 ## 1.1.1 (2015-10-13)
 
 - Fixed a bug with raspi-peripheral throwing an exception
