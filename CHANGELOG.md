@@ -1,3 +1,8 @@
+## 1.3.2 (2016-3-20)
+
+- Dependency update to fix bug
+- New build system
+
 ## 1.3.1 (2016-3-7)
 
 - Dependency update to add missing Raspberry Pi 3 Model B revision
