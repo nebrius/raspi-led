@@ -90,7 +90,7 @@ _Arguments_:
   </thead>
   <tr>
     <td>value</td>
-    <td>```ON``` | ```OFF```</td>
+    <td><code>ON</code> | <code>OFF</code></td>
     <td>The LED status to set</td>
   </tr>
 </table>
