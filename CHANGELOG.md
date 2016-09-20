@@ -1,3 +1,7 @@
+## 1.5.0 (2016-9-19)
+
+- Added guards around file access, so this should work on systems that use a different LED mechanism
+
 ## 1.4.0 (2016-7-7)
 
 - Switched dependency ranges to ^

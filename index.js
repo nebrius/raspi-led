@@ -25,6 +25,12 @@ THE SOFTWARE.
 import fs from 'fs';
 import { Peripheral } from 'raspi-peripheral';
 
+const hasLed = fs.existsSync('/sys/class/leds/led0') &&
+  fs.existsSync('/sys/class/leds/led0/trigger') &&
+  fs.existsSync('/sys/class/leds/led0/brightness');
+
+console.log(hasLed);
+
 export const OFF = 0;
 export const ON = 1;
 
@@ -32,19 +38,26 @@ export class LED extends Peripheral {
 
   constructor() {
     super([]);
-    fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
+    if (hasLed) {
+      fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
+    }
   }
 
   read() {
-    return parseInt(fs.readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
+    if (hasLed) {
+      return parseInt(fs.readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
+    }
+    return OFF;
   }
 
   write(value) {
     this.validateAlive();
     if ([ ON, OFF ].indexOf(value) == -1) {
-      throw new Error('Invalid LED value ' + value);
+      throw new Error(`Invalid LED value ${value}`);
     }
-    fs.writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
+    if (hasLed) {
+      fs.writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
+    }
   }
 
 }
