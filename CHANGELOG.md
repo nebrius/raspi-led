@@ -1,3 +1,7 @@
+## 1.5.1 (2016-10-29)
+
+- Removed debugging statement accidentally left in
+
 ## 1.5.0 (2016-9-19)
 
 - Added guards around file access, so this should work on systems that use a different LED mechanism

@@ -29,8 +29,6 @@ const hasLed = fs.existsSync('/sys/class/leds/led0') &&
   fs.existsSync('/sys/class/leds/led0/trigger') &&
   fs.existsSync('/sys/class/leds/led0/brightness');
 
-console.log(hasLed);
-
 export const OFF = 0;
 export const ON = 1;
 
