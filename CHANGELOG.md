@@ -1,3 +1,7 @@
+## 1.5.4 (2016-12-21)
+
+- Added missing TypeScript definition package.json entry
+
 ## 1.5.3 (2016-12-21)
 
 - Forgot to explicitly mark the methods as public in the TypeScript definition.
