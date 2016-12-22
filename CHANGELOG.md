@@ -1,3 +1,8 @@
+## 1.5.3 (2016-12-21)
+
+- Forgot to explicitly mark the methods as public in the TypeScript definition.
+  - Note: methods are public by default, so there isn't technically a change, but it's good to be explicit about these things
+
 ## 1.5.2 (2016-12-21)
 
 - Converted the project to TypeScript and cleaned up a bunch of odds and ends

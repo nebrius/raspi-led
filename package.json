@@ -1,6 +1,6 @@
 {
   "name": "raspi-led",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Provides access to status LED on the Raspberry Pi as part of the Raspi.js library suite",
   "main": "dist/index.js",
   "dependencies": {

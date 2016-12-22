@@ -41,14 +41,14 @@ export class LED extends Peripheral {
     }
   }
 
-  read(): 0 | 1 {
+  public read(): 0 | 1 {
     if (hasLed) {
       return parseInt(readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
     }
     return OFF;
   }
 
-  write(value: 0 | 1): void {
+  public write(value: 0 | 1): void {
     this.validateAlive();
     if ([ ON, OFF ].indexOf(value) === -1) {
       throw new Error(`Invalid LED value ${value}`);
