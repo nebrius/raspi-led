@@ -22,12 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import fs from 'fs';
+import { existsSync, writeFileSync, readFileSync } from 'fs';
 import { Peripheral } from 'raspi-peripheral';
 
-const hasLed = fs.existsSync('/sys/class/leds/led0') &&
-  fs.existsSync('/sys/class/leds/led0/trigger') &&
-  fs.existsSync('/sys/class/leds/led0/brightness');
+const hasLed = existsSync('/sys/class/leds/led0') &&
+  existsSync('/sys/class/leds/led0/trigger') &&
+  existsSync('/sys/class/leds/led0/brightness');
 
 export const OFF = 0;
 export const ON = 1;
@@ -37,24 +37,24 @@ export class LED extends Peripheral {
   constructor() {
     super([]);
     if (hasLed) {
-      fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
+      writeFileSync('/sys/class/leds/led0/trigger', 'none');
     }
   }
 
-  read() {
+  read(): 0 | 1 {
     if (hasLed) {
-      return parseInt(fs.readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
+      return parseInt(readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
     }
     return OFF;
   }
 
-  write(value) {
+  write(value: 0 | 1): void {
     this.validateAlive();
-    if ([ ON, OFF ].indexOf(value) == -1) {
+    if ([ ON, OFF ].indexOf(value) === -1) {
       throw new Error(`Invalid LED value ${value}`);
     }
     if (hasLed) {
-      fs.writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
+      writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
     }
   }
 
