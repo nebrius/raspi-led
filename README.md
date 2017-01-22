@@ -17,17 +17,19 @@ Install with NPM:
 npm install raspi-led
 ```
 
+**Note:** this project is written in [TypeScript](http://www.typescriptlang.org/) and includes type definitions in the package.json file. This means that if you want to use it from TypeScript, you don't need to install a separate @types module.
+
 ## Example Usage
 
 ```JavaScript
-var raspi = require('raspi');
-var led = require('raspi-led');
+const raspi = require('raspi');
+const led = require('raspi-led');
 
-raspi.init(function() {
-  var statusLed = new led.LED();
+raspi.init(() => {
+  const statusLed = new led.LED();
 
   // Flash the LED twice a second
-  setInterval(function() {
+  setInterval(() => {
     if (statusLed.read() == led.ON) {
       statusLed.write(led.OFF); // Turn off the status LED
     } else {

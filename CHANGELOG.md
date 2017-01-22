@@ -1,3 +1,7 @@
+## 1.5.5 (2017-22-1)
+
+- Publishing a new version to update the README on npmjs.com. No other changes.
+
 ## 1.5.4 (2016-12-21)
 
 - Added missing TypeScript definition package.json entry
