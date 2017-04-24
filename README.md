@@ -21,6 +21,28 @@ npm install raspi-led
 
 ## Example Usage
 
+In TypeScript/ES6:
+
+```JavaScript
+import { init } from 'raspi';
+import { LED, ON, OFF } from 'raspi-led';
+
+init(() => {
+  const statusLed = new LED();
+
+  // Flash the LED twice a second
+  setInterval(() => {
+    if (statusLed.read() == ON) {
+      statusLed.write(OFF); // Turn off the status LED
+    } else {
+      statusLed.write(ON); // Turn on the status LED
+    }
+  }, 500);
+});
+```
+
+In JavaScript:
+
 ```JavaScript
 const raspi = require('raspi');
 const led = require('raspi-led');
