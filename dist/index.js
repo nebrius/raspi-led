@@ -1,7 +1,8 @@
+"use strict";
 /*
 The MIT License (MIT)
 
-Copyright (c) 2015 Bryan Hughes <bryan@nebri.us>
+Copyright (c) 2014-2017 Bryan Hughes <bryan@nebri.us>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +22,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -40,7 +40,7 @@ var hasLed = fs_1.existsSync('/sys/class/leds/led0') &&
     fs_1.existsSync('/sys/class/leds/led0/brightness');
 exports.OFF = 0;
 exports.ON = 1;
-var LED = (function (_super) {
+var LED = /** @class */ (function (_super) {
     __extends(LED, _super);
     function LED() {
         var _this = _super.call(this, []) || this;
@@ -49,6 +49,9 @@ var LED = (function (_super) {
         }
         return _this;
     }
+    LED.prototype.hasLed = function () {
+        return hasLed;
+    };
     LED.prototype.read = function () {
         if (hasLed) {
             return parseInt(fs_1.readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? exports.ON : exports.OFF;
@@ -61,7 +64,7 @@ var LED = (function (_super) {
             throw new Error("Invalid LED value " + value);
         }
         if (hasLed) {
-            fs_1.writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
+            fs_1.writeFileSync('/sys/class/leds/led0/brightness', value ? '1' : '0');
         }
     };
     return LED;

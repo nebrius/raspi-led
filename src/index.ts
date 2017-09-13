@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2015 Bryan Hughes <bryan@nebri.us>
+Copyright (c) 2014-2017 Bryan Hughes <bryan@nebri.us>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,6 +41,10 @@ export class LED extends Peripheral {
     }
   }
 
+  public hasLed(): boolean {
+    return hasLed;
+  }
+
   public read(): 0 | 1 {
     if (hasLed) {
       return parseInt(readFileSync('/sys/class/leds/led0/brightness').toString(), 10) ? ON : OFF;
@@ -54,7 +58,7 @@ export class LED extends Peripheral {
       throw new Error(`Invalid LED value ${value}`);
     }
     if (hasLed) {
-      writeFileSync('/sys/class/leds/led0/brightness', value ? '255' : '0');
+      writeFileSync('/sys/class/leds/led0/brightness', value ? '1' : '0');
     }
   }
 

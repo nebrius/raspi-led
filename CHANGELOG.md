@@ -1,3 +1,10 @@
+## 2.0.0 (2017-9-12)
+
+- BREAKING CHANGE: dropped support for Node.js < 4.0.0, and now enforce it via package.json "engines" field.
+- SORT OF BREAKING-ISH CHANGE: dropped support for attempting to install on non-arm platforms via package.json's "cpu" field.
+    - Attempting to install this on a non-Raspberry Pi platform before gave a bunch of obtuse errors, so this doesn't _actually_ change the ability to install raspi-gpio, but does make it fail earlier and harder.
+- Added a new instance method `hasLed()` that returns if a system LED was dedected or not for this instance
+
 ## 1.5.5 (2017-22-1)
 
 - Publishing a new version to update the README on npmjs.com. No other changes.

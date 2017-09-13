@@ -1,17 +1,23 @@
 {
   "name": "raspi-led",
-  "version": "1.5.5",
+  "version": "2.0.0",
   "description": "Provides access to status LED on the Raspberry Pi as part of the Raspi.js library suite",
   "main": "dist/index.js",
   "types": "./declarations/index.d.ts",
   "dependencies": {
-    "raspi-peripheral": "^1.6.0"
+    "raspi-peripheral": "^2.0.1"
   },
   "devDependencies": {
-    "@types/node": "7.0.13",
-    "tslint": "^5.1.0",
-    "typescript": "^2.2.2"
+    "@types/node": "^8.0.28",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
   },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "cpu": [
+    "arm"
+  ],
   "scripts": {
     "prebuild": "tslint src/**/*.ts",
     "build": "tsc",
