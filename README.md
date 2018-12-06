@@ -90,6 +90,27 @@ raspi.init(() => {
     <td>ON</td>
     <td>Status value indicating the LED is on, one of the two possible return values from reads and arguments to writes</td>
   </tr>
+  <tr>
+    <td>module</td>
+    <td>An easily consumable object for indirectly passing this module around. Intended specifically for use by Core IO (details coming soon)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>createLED()</td>
+        <tr>Function</tr>
+        <td>Pass through for the <a href="#new-led">LED constructor</a></td>
+      </tr>
+    </table></td>
+  </tr>
 </table>
 
 ### new LED()
@@ -144,7 +165,7 @@ License
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2017 Bryan Hughes <bryan@nebri.us>
+Copyright (c) Bryan Hughes <bryan@nebri.us>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

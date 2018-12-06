@@ -1,3 +1,8 @@
+## 2.1.0 (2018-12-6)
+
+- Updated TypeScript to v3. Note: the compiled output changed as I previously didn't set the compiled output target flag correctly.
+- Added `module` export to conform with Core IO types
+
 ## 2.0.0 (2017-9-12)
 
 - BREAKING CHANGE: dropped support for Node.js < 4.0.0, and now enforce it via package.json "engines" field.

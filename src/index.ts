@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2014-2017 Bryan Hughes <bryan@nebri.us>
+Copyright (c) Bryan Hughes <bryan@nebri.us>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,7 @@ THE SOFTWARE.
 
 import { existsSync, writeFileSync, readFileSync } from 'fs';
 import { Peripheral } from 'raspi-peripheral';
+import { ILEDModule, ILED } from 'core-io-types';
 
 const hasLed = existsSync('/sys/class/leds/led0') &&
   existsSync('/sys/class/leds/led0/trigger') &&
@@ -32,7 +33,7 @@ const hasLed = existsSync('/sys/class/leds/led0') &&
 export const OFF = 0;
 export const ON = 1;
 
-export class LED extends Peripheral {
+export class LED extends Peripheral implements ILED {
 
   constructor() {
     super([]);
@@ -63,3 +64,9 @@ export class LED extends Peripheral {
   }
 
 }
+
+export const module: ILEDModule = {
+  createLED() {
+    return new LED();
+  }
+};
