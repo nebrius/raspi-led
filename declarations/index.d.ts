@@ -1,5 +1,5 @@
 import { Peripheral } from 'raspi-peripheral';
-import { ILEDModule, ILED } from 'core-io-types';
+import { ILEDModule, ILED } from 'j5-io-types';
 export declare const OFF = 0;
 export declare const ON = 1;
 export declare class LED extends Peripheral implements ILED {

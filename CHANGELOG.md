@@ -1,3 +1,7 @@
+## 2.1.1 (2019-2-20)
+
+- Updated dependencies
+
 ## 2.1.0 (2018-12-6)
 
 - Updated TypeScript to v3. Note: the compiled output changed as I previously didn't set the compiled output target flag correctly.

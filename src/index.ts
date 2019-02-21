@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 import { existsSync, writeFileSync, readFileSync } from 'fs';
 import { Peripheral } from 'raspi-peripheral';
-import { ILEDModule, ILED } from 'core-io-types';
+import { ILEDModule, ILED } from 'j5-io-types';
 
 const hasLed = existsSync('/sys/class/leds/led0') &&
   existsSync('/sys/class/leds/led0/trigger') &&
